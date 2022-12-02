@@ -59,6 +59,10 @@ jobs:
       run: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        git clone https://github.com/esirplayground/luci-app-poweroff.git /workdir/openwrt/package/
+        git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git /workdir/openwrt/package/lean/
+        git clone https://github.com/jerrykuku/luci-app-vssr.git /workdir/openwrt/package/lean/
+        git clone https://github.com/jerrykuku/lua-maxminddb.git /workdir/openwrt/package/lean/
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
     - name: Load custom feeds
