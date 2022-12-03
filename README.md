@@ -1,3 +1,6 @@
+
+默认ip192.168.8.1 密码password 刷入方式： dd if=/tmp/upload/aaa.img of=/dev/mmcblk0
+
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 # Actions-OpenWrt
