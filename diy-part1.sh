@@ -16,7 +16,12 @@
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-
 echo 'src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' >>feeds.conf.default
 echo 'src-git kenzok8_packages https://github.com/kenzok8/openwrt-packages.git' >>feeds.conf.default
 echo 'src-git small https://github.com/kenzok8/small.git' >>feeds.conf.default
+
+# default on dhcp.lan.force
+sed -i '/exit 0/d' package/lean/default-settings/files/zzz-default-settings
+echo 'uci set dhcp.lan.force=1' >>package/lean/default-settings/files/zzz-default-settings
+echo 'uci commit dhcp' >>package/lean/default-settings/files/zzz-default-settings
+echo 'exit 0' >>package/lean/default-settings/files/zzz-default-settings
