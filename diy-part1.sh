@@ -20,11 +20,6 @@ echo 'src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' 
 echo 'src-git kenzok8_packages https://github.com/kenzok8/openwrt-packages.git' >>feeds.conf.default
 echo 'src-git small https://github.com/kenzok8/small.git' >>feeds.conf.default
 
-git clone https://github.com/esirplayground/luci-app-poweroff.git package/luci-app-poweroff
-git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git package/lean/luci-app-bandwidthd
-git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
-git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
-
 # default on dhcp.lan.force
 sed -i '/exit 0/d' package/lean/default-settings/files/zzz-default-settings
 echo 'uci set dhcp.lan.force=1' >>package/lean/default-settings/files/zzz-default-settings
